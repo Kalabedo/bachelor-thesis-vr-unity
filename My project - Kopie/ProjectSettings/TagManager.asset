@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - LeftHand
+  - RightHand
+  - QTQuestionPage
+  - QTQuestionnaireManager
+  - QTManager
+  - QTOptionOther
+  - QTSelectionHighlight
+  - QTGridOption
+  - QTMultipleChoiceGrid
+  - QTMultipleChoice
+  - QTLinearScale
+  - QTImage
+  - QTGridRowHeader
+  - QTSlider
+  - QTButton
+  - QTCheckboxes
+  - QTCheckboxesGrid
+  - QTDropdown
+  - QTText
+  - QTTextInput
+  - QTVideo
+  - courtFloor
+  - colliderThrow
+  - screenCamera
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Interactable
+  - PostProcessing
+  - TwoHandGrab
+  - LeftHandPhysics
+  - RightHandPhysics
+  - BallNoPhysics
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

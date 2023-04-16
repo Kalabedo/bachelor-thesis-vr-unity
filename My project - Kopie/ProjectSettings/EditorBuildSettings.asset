@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/ScenarioTutorial.unity
+    guid: 93e6026abbdc39c4ba703c1c4596e550
+  - enabled: 1
+    path: Assets/Scenes/Scenario1_1.unity
+    guid: ad0d0d4d2f5e1394589386a0c36af977
+  - enabled: 1
+    path: Assets/Scenes/Scenario1_1Quest.unity
+    guid: 42d47cfbff90d104f8e584b0a352846b
+  - enabled: 1
+    path: Assets/Scenes/Scenario1_2.unity
+    guid: b33b4afc274f0624eb5f3e9d4fb6588f
+  - enabled: 1
+    path: Assets/Scenes/Scenario1_2Quest.unity
+    guid: 2b0c520b2f5fab44ebcba2d2c06a4337
+  - enabled: 1
+    path: Assets/Scenes/Scenario2_1.unity
+    guid: 2c593f17618de2b42b0e63e7a9636d1b
+  - enabled: 1
+    path: Assets/Scenes/Scenario2_1Quest.unity
+    guid: c1e17d9bc1041e94d9959311c40880b2
+  - enabled: 1
+    path: Assets/Scenes/Scenario2_2.unity
+    guid: 8d47667d853971845a6da242f8d3bbb6
+  - enabled: 1
+    path: Assets/Scenes/Scenario2_2Quest.unity
+    guid: fac980ded09034640b2303fd30e13792
+  - enabled: 1
+    path: Assets/Scenes/Scenario3_1.unity
+    guid: baf307709df7d1341874624508baaaf1
+  - enabled: 1
+    path: Assets/Scenes/Scenario3_1Quest.unity
+    guid: a6a3df951f8832a4f811887c0c11e6f5
+  - enabled: 1
+    path: Assets/Scenes/Scenario3_2.unity
+    guid: fbd284ee44e2497418c95f3f5a44183a
+  - enabled: 1
+    path: Assets/Scenes/Scenario3_2Quest.unity
+    guid: 0ab60d80f5fd697448c7ad433e0e1df2
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d9f3b5a87de1ff544afafd0f8bb606cc,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cdf57e4d76edab547bdd0dc7628abf45,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a4ddf0565d83608418fdfc49eb9c24e6,
+      type: 2}
