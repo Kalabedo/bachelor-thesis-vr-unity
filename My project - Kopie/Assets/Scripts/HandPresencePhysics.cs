@@ -12,7 +12,7 @@ public class HandPresencePhysics : MonoBehaviour
     void Start()
     {
         rb.GetComponent<Rigidbody>();
-        handColliders = GetComponentsInChildren<Collider>();
+        handColliders = GetComponentsInChildren<Collider>();  //add colliders to hand
     }
 
     public void EnableHandCollider()

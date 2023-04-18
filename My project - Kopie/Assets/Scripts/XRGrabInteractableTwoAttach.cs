@@ -17,10 +17,10 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         }
         else if(args.interactorObject.transform.CompareTag("RightHand"))
         {
-            attachTransform = rightAttachTransform;
+            attachTransform = rightAttachTransform;                         //use correct attach point
         }
 
-        AudioSource.PlayClipAtPoint(sound, transform.position);
+        AudioSource.PlayClipAtPoint(sound, transform.position);             //sound when pickup
         base.OnSelectEntered(args);
     }
 }

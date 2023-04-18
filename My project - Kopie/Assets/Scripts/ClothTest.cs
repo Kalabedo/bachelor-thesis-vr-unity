@@ -12,7 +12,7 @@ public class ClothTest : MonoBehaviour {
 
         for (int i = 0; i < spawnPunkte.Length; i++)
         {         
-            tmp[i] = spawnPunkte[i].GetComponentInChildren<CapsuleCollider>();
+            tmp[i] = spawnPunkte[i].GetComponentInChildren<CapsuleCollider>();      //add capusle colliders to the instantiated balls for cloth interaction
         }
         
         cloth.capsuleColliders = tmp;

@@ -9,23 +9,23 @@ using UnityEditor;
 
 public class GrabHandPose : MonoBehaviour
 {
-    public HandData rightHandPose;
-    public HandData leftHandPose;
-    private Vector3 startingHandPos;
-    private Vector3 finalHandPos;
-    private Quaternion startingHandRot;
-    private Quaternion finalHandRot;
+    public HandData rightHandPose;          //custom right Handpose
+    public HandData leftHandPose;           //custom left Handpose
+    private Vector3 startingHandPos;        //position start 
+    private Vector3 finalHandPos;           //position end
+    private Quaternion startingHandRot;     //rotation start 
+    private Quaternion finalHandRot;        //rotation end
 
-    private Quaternion[] startingFingerRot;
-    private Quaternion[] finalFingerRot;
+    private Quaternion[] startingFingerRot; //finger rotation start 
+    private Quaternion[] finalFingerRot;    //finger rotation end 
 
     // Start is called before the first frame update
     void Start()
     {
         XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
 
-        grabInteractable.selectEntered.AddListener(SetupPose);
-        grabInteractable.selectExited.AddListener(UnsetPose);
+        grabInteractable.selectEntered.AddListener(SetupPose);      //call when grab
+        grabInteractable.selectExited.AddListener(UnsetPose);       //call when release
 
         rightHandPose.gameObject.SetActive(false);
         leftHandPose.gameObject.SetActive(false);
@@ -35,16 +35,16 @@ public class GrabHandPose : MonoBehaviour
     {
         if(arg.interactorObject is XRDirectInteractor)
         {
-            HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
+            HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();  //get current hand data
             handData.animator.enabled = false;
 
             if (handData.handType == HandData.HandModelType.Right)
             {
-                SetHandDataValues(handData, rightHandPose);
+                SetHandDataValues(handData, rightHandPose);         //set new for right hand
             }
             else
             {
-                SetHandDataValues(handData, leftHandPose);
+                SetHandDataValues(handData, leftHandPose);          //set new for left hand
             }
 
             SetHandData(handData, finalHandPos, finalHandRot, finalFingerRot);
@@ -92,7 +92,7 @@ public class GrabHandPose : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    [MenuItem("Tools/Mirror Selected Right Grab Pose")]
+    [MenuItem("Tools/Mirror Selected Right Grab Pose")]         //create function to mirror handpose, without editing in unity
     public static void MirrorRightPose()
     {
         Debug.Log("Mirror Pose");

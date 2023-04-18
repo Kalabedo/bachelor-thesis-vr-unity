@@ -11,23 +11,23 @@ public class MenuButtonController : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = (currentSceneIndex + 1);
 
-        if (currentSceneIndex == sceneNames.Length)
+        if (currentSceneIndex == sceneNames.Length)  //when the index is the last scene
         {
             if(counterScenes == 5)
             {
-                Application.Quit();
+                Application.Quit();  //when six runs done quit
             }
             else
             {
                 counterScenes++;
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(1);  //increment and load scene 1
             }
         }
         else
         {
             if (counterScenes == 5)
             {
-                Application.Quit();
+                Application.Quit();  //when six runs done quit
             }
             else
             {
@@ -36,13 +36,6 @@ public class MenuButtonController : MonoBehaviour
                 SceneManager.LoadScene(nextSceneIndex);
             }
         }
-        // Calculate the index of the next scene to load
-        // int nextSceneIndex = (currentSceneIndex) % sceneNames.Length;
-        // Debug.Log(currentSceneIndex);
-        // Debug.Log(nextSceneIndex);
-
-        // // Load the next scene
-        // SceneManager.LoadScene(sceneNames[nextSceneIndex]);
     }
 }
 

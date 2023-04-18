@@ -25,13 +25,12 @@ public class BallSpawnScenario3 : MonoBehaviour
 
             if (usedIndexes.Count == objectsToBeSpawned.Length)
             {
-                // Alle Indizes wurden bereits verwendet, resete die Liste
-                usedIndexes.Clear();
+                usedIndexes.Clear(); // all balls have been spawned
             }
 
             do
             {
-                // Wähle einen zufälligen Index aus, der noch nicht verwendet wurde
+                // pick random index, that wasnt used already
                 index = UnityEngine.Random.Range(0, objectsToBeSpawned.Length);
             } while (usedIndexes.Contains(index));
 
@@ -47,7 +46,7 @@ public class BallSpawnScenario3 : MonoBehaviour
         
     }
 
-    Quaternion RandomQuaternion()
+    Quaternion RandomQuaternion()  //random rotation
     {
         double x, y, z, u, v, w, s;
         do { x = UnityEngine.Random.Range(-1f, 1f); y = UnityEngine.Random.Range(-1f, 1f); z = x * x + y * y; } while (z > 1);

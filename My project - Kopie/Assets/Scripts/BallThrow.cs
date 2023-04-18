@@ -7,13 +7,13 @@ public class BallThrow : MonoBehaviour
 {
     private string[] sceneNames = {"Scenario1_1", "Scenario1_1Quest", "Scenario1_2", "Scenario1_2Quest", "Scenario2_1", "Scenario2_1Quest", "Scenario2_2", "Scenario2_2Quest", "Scenario3_1", "Scenario3_1Quest", "Scenario3_2", "Scenario3_2Quest"};
     
-    public float despawnDelay = 5f; // Zeitverzögerung in Sekunden, bevor der Ball despawnt
+    public float despawnDelay = 5f; // delay in seconds for respawn/despawn
     private Vector3 player = Vector3.zero;
 
     private Rigidbody rigidBody;
     private XRGrabInteractable grabInteractable;
 
-    private Transform parentTransform; // Transform des Parents, an dem der Ball gespawnt werden soll
+    private Transform parentTransform; // transform des parents => spawnpunkt
     private static int ballCounter = 0;
     private bool isRespawning = false;
     private bool isGrabbed = false;
@@ -33,7 +33,7 @@ public class BallThrow : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("HandPoseEnvelope(Clone)"))
             {
-                // Respawn if the ball was hit by another ball and rolled away
+                // respawn if the ball was hit by another ball and rolled away
                 Respawn();
             }
         }
@@ -43,7 +43,7 @@ public class BallThrow : MonoBehaviour
     {
         if (isGrabbed)
         {
-            // Check the throw distance while the ball is grabbed
+            // check throw distance while the ball is grabbed
             throwDistance = Vector3.Distance(transform.position, player);
         }
 
@@ -51,7 +51,7 @@ public class BallThrow : MonoBehaviour
         {
             if (throwDistance > throwThreshold)
             {
-                // Disable grab if the ball is thrown over the threshold distance
+                // disable grab if ball is thrown over threshold distance
                 grabInteractable.enabled = false;
                 Respawn();
             }
@@ -71,12 +71,12 @@ public class BallThrow : MonoBehaviour
 
         if (ballCounter == 5)
         {
-            // Load the next scene if 5 balls have been thrown
+            // load next scene if 5 balls have been thrown
             LoadNextScene();
         }
         else
         {
-            // Respawn the ball if it was thrown below the threshold distance
+            // respawn ball if it was thrown below threshold distance
             if (throwDistance < throwThreshold)
             {
                 Respawn();
@@ -101,7 +101,7 @@ public class BallThrow : MonoBehaviour
         isRespawning = false;
     }
 
-    public void LoadNextScene()
+    public void LoadNextScene()     //scene loader
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;

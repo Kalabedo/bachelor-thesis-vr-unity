@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HandData : MonoBehaviour
 {
-    // Start is called before the first frame update
     public enum HandModelType {Left, Right};
 
     public HandModelType handType;

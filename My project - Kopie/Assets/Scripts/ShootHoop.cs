@@ -9,22 +9,11 @@ public class ShootHoop : MonoBehaviour
 
     public static event Action<int> ScoredPoints = delegate{ };
 
-    public float coolDownTime = 1f;
+    public float coolDownTime = 1f; 
     public float resetHoop = 1f;
     private bool canActivate = true;
     private bool fromBottom = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -32,6 +21,7 @@ public class ShootHoop : MonoBehaviour
 
         if (rb != null && rb.velocity.y > 0)
         {
+            //ball enters from below
             fromBottom = true;
             StartCoroutine(ResetFromBottom());
         }
@@ -40,10 +30,10 @@ public class ShootHoop : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(sound, transform.position);
             ScoredPoints(2);
-            // Trigger deaktivieren
+            // deactivate trigger
             canActivate = false;
 
-            // Coroutine starten, um die Cooldown-Zeit zu zählen
+            // Coroutine start, to count cooldown time
             StartCoroutine(ResetActivation());
         }
     }

@@ -20,15 +20,15 @@ public class DigitalBoard : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            characters[i].sprite = digits[0];
+            characters[i].sprite = digits[0];           //get all digits as sprite
         }   
 
         scoreAmount = 0;
 
-        ShootHoop.ScoredPoints += AddScoreAndDisplay;
+        ShootHoop.ScoredPoints += AddScoreAndDisplay;   //display value 0
     }
 
-    private void AddScoreAndDisplay(int scoreValue)
+    private void AddScoreAndDisplay(int scoreValue)     //standard 2
     {
         scoreAmount += scoreValue;
 
@@ -46,7 +46,7 @@ public class DigitalBoard : MonoBehaviour
             case 1:
             characters[0].sprite = digits[0];
             characters[1].sprite = digits[0];
-            characters[2].sprite = digits[scoreAmountByDigitsArray[0]];
+            characters[2].sprite = digits[scoreAmountByDigitsArray[0]];     //decide, which value dispolays for the score
             break;
 
             case 2:

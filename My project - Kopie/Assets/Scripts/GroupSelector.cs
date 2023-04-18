@@ -21,28 +21,28 @@ public class GroupSelector : MonoBehaviour
 
         confirmButton.onClick.AddListener(delegate
         {
-            LoadScene(selectedGroup);
+            LoadScene(selectedGroup);                           //on confirm button call loadScene
         });
     }
 
     void DropdownValueChanged(TMP_Dropdown change)
     {
-        selectedGroup = change.options[change.value].text;
+        selectedGroup = change.options[change.value].text;  //dropdown change
     }
 
     void LoadScene(string selectedGroup)
     {
         if (selectedGroup == "Group A")
         {
-            SceneManager.LoadScene("Scenario1_1");
+            SceneManager.LoadScene("Scenario1_1");  //when A selected start with scene 1
         }
         else if (selectedGroup == "Group B")
         {
-            SceneManager.LoadScene("Scenario3_1");
+            SceneManager.LoadScene("Scenario3_1");  //when B selected start with scene 3
         }
         else if (selectedGroup == "Group C")
         {
-            SceneManager.LoadScene("Scenario2_1");
+            SceneManager.LoadScene("Scenario2_1");  //when B selected start with scene 2
         }
     }
 }
